@@ -16,7 +16,7 @@ const MovieContent = () => {
   };
   useEffect(() => {
     getMovieDetails();
-  }, []);
+  }, [getMovieDetails]);
   return (
     <Container>
       <div className="card-details">

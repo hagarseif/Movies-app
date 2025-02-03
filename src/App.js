@@ -1,7 +1,5 @@
-import { useState } from "react";
 import NavBar from "./component/NavBar";
 import MoviesList from "./component/MoviesList";
-import axios from "axios";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import MovieContent from "./component/MovieContent";
 

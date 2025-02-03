@@ -7,16 +7,22 @@ const MovieContent = () => {
   const param = useParams();
   const [movie, setMovie] = useState([]);
 
-  const getMovieDetails = async () => {
-    const movies = await axios.get(
-      `https://api.themoviedb.org/3/movie/${param.id}?api_key=304088268ab729e3ad4c92b558a30558&language=ar`
-    );
-    setMovie(movies.data);
-    console.log(movies.data.homepage)
-  };
+
+
+
+
+
+
   useEffect(() => {
+    const getMovieDetails = async () => {
+      const movies = await axios.get(`https://api.themoviedb.org/3/movie/${param.id}?api_key=304088268ab729e3ad4c92b558a30558&language=ar`);
+      setMovie(movies.data);
+      console.log(movies.data.homepage)
+    };
+
     getMovieDetails();
-  }, [getMovieDetails]);
+  }, [param.id]);
+
   return (
     <Container>
       <div className="card-details">
@@ -68,7 +74,8 @@ const MovieContent = () => {
                 عودة للرئيسية
               </button>
             </Link>
-            <a href={movie.homepage} target="_blank">
+
+            <a href={movie.homepage} target="_blank" rel="noopener noreferrer">
               <button
                 style={{ backgroundColor: "#b45b35", border: "none" }}
                 className="btn btn-primary  py-2 px-4">

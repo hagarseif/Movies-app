@@ -4,14 +4,14 @@ import { getPage } from '../redux/action/movieAction'
 import { useDispatch, useSelector } from 'react-redux';
 
 const Pagination = () => {
-  const [pageCount, setpageCount] = useState(0)
+  const [pageCount, setPageCount] = useState(0)
 
   const dispatch = useDispatch();
   const pages = useSelector((state) => state.allMovies.pageCount);
 
   useEffect(() => {
-      setpageCount(pages)
-  }, [])
+      setPageCount(pages)
+  }, [pages])
 
 
   const handlePageClick = (data) => {

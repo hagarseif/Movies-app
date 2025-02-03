@@ -1,12 +1,11 @@
 import { AllMovies } from "../type/movieType";
 
 const initialValue={movie:[],pageCount:0}
-export const movieReducer = (store=initialValue,action) => {
+export const movieReducer = (state=initialValue,action) => {
     switch (action.type) {
         case AllMovies:
-                return {movie:action.data,pageCount:action.pages}
+                return {movie:action.data,pageCount:action.pages}  
         default:
-            return store;
+            return state;
     }
 }
-

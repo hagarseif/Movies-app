@@ -6,11 +6,10 @@ import { Row } from 'react-bootstrap';
 import Pagination from './Pagination';
 import { getAllMovies } from '../redux/action/movieAction';
 
-const MoviesList = ({ getPage, pageCount }) => {
+const MoviesList = () => {
   const dispatch = useDispatch();
   const movieData = useSelector((state) => state.allMovies); 
   const [loading, setLoading] = useState(true);
-  console.log(movieData);
   
 
   useEffect(() => {
@@ -36,7 +35,7 @@ const MoviesList = ({ getPage, pageCount }) => {
       ) : (
         <h2 className="text-center my-5 font">لا يوجد أفلام ...</h2>
       )}
-      {movieData.pageCount >0 ? <Pagination getPage={getPage} pageCount={movieData.pageCount} /> : null}
+      {movieData.pageCount >0 ? <Pagination /> : null}
     </Row>
   );
 };
